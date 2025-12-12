@@ -1,0 +1,155 @@
+:root {
+  --primary-color: #0a0e16;
+  --black-1: #10151f;
+  --black-2: #0f141e;
+  --black-3: #1b2030;
+  --black-4: #101521;
+  --moon: #0e111b;
+  --night-light: #181f2f;
+  --dirty-sky: #1f273a;
+  --smog: #a8bec9;
+  --grey-1: #141a26;
+  --grey-3: #ffffff66;
+  --dark-cat: #222734;
+  --starlight-25: #ffffff40;
+  --starlight-100: #fff;
+  --light-grey: #242a32;
+  --tank-oil: #0e141e;
+  --dark: #0c1019;
+  --night: #0e1113;
+  --blue-1: #025cc1;
+  --paradise: #d9f4ff;
+  --primary-font: "Rubik", sans-serif;
+  --secondary-font: "Montserrat", sans-serif;
+  --xs: 4px;
+  --sm: 8px;
+  --md: 12px;
+  --color-error: #f1323e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--primary-color);
+  color: var(--starlight-100);
+  font-family: var(--primary-font);
+}
+
+.plinkoButton {
+  padding: 14px 24px;
+  border-radius: 8px;
+  border: none;
+  font-family: var(--primary-font);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+
+  &[data-style="primary"] {
+    background: var(--blue-1);
+    color: white;
+  }
+
+  &[data-size="sm"] {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  &[data-size="lg"] {
+    padding: 16px 32px;
+    font-size: 18px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputLabel {
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--starlight-100);
+  margin-bottom: 4px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--black-3);
+    background: var(--black-1);
+    color: white;
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-weight: 400;
+
+    &:focus {
+      outline: none;
+      border-color: var(--blue-1);
+    }
+  }
+
+  &[data-in-error="true"] {
+    input {
+      border-color: var(--color-error);
+    }
+
+    &::after {
+      content: attr(data-error-text);
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      font-size: 12px;
+      color: var(--color-error);
+    }
+  }
+}
+
+.inputButtons {
+  display: flex;
+  gap: 4px;
+}
+
+.inputButton {
+  padding: 13px;
+  border-radius: 8px;
+  border: 1px solid var(--black-3);
+  background: var(--black-3);
+  color: white;
+  font-family: var(--primary-font);
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+
+  &:hover {
+    background: var(--dark-cat);
+    border-color: var(--dark-cat);
+  }
+}
+
