@@ -56,7 +56,7 @@ const BetInput = memo(() => {
           id="bet-amount-input"
           value={bet}
           maxDecimals={gameInfo.maxDecimals}
-          onValueChange={(val) => setBet(val)}
+          onValueChange={setBet}
           min={gameInfo.minBet}
           max={gameInfo.maxBet}
         />
@@ -65,8 +65,6 @@ const BetInput = memo(() => {
     </div>
   );
 });
-
-BetInput.displayName = "BetInput";
 
 export default BetInput;
 

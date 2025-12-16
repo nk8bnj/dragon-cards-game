@@ -36,7 +36,5 @@ const Card = memo(({ card, index, isSelected, isSelectable, onClick, isDragging 
   );
 });
 
-Card.displayName = "Card";
-
 export default Card;
 

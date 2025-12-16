@@ -21,6 +21,10 @@ const RiskSelector = memo(() => {
     [playSound, setRisk],
   );
 
+  const isActive = (value: DragonCardRiskType) => {
+    return risk === value;
+  };
+
   return (
     <div className="inputContainer">
       <div className="inputLabel">Risk</div>
@@ -29,8 +33,8 @@ const RiskSelector = memo(() => {
           <button
             key={`risk-${index}`}
             className={styles.riskButton}
-            disabled={isGameProcessing || risk === value}
-            data-active={risk === value}
+            disabled={isGameProcessing || isActive(value)}
+            data-active={isActive(value)}
             onClick={handleClick(value)}
           >
             {value.toLowerCase()}
@@ -40,8 +44,6 @@ const RiskSelector = memo(() => {
     </div>
   );
 });
-
-RiskSelector.displayName = "RiskSelector";
 
 export default RiskSelector;
 

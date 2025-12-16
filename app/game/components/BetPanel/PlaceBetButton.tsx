@@ -31,7 +31,5 @@ const PlaceBetButton = memo(({ onPlaceBet }: PlaceBetButtonProps) => {
   );
 });
 
-PlaceBetButton.displayName = "PlaceBetButton";
-
 export default PlaceBetButton;
 

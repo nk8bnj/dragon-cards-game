@@ -29,7 +29,5 @@ const MultiplierLabel = memo(({ multiplier, cardId, isMatched }: MultiplierLabel
   );
 });
 
-MultiplierLabel.displayName = "MultiplierLabel";
-
 export default MultiplierLabel;
 

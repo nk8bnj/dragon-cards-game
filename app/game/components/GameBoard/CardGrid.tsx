@@ -107,20 +107,10 @@ const CardGrid = () => {
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
-                        style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                          gap: 20,
-                          opacity: snapshot.isDragging ? 0.9 : 1,
-                          transform: snapshot.isDragging ? "rotate(3deg) scale(1.05)" : "none",
-                          transition: snapshot.isDragging ? "none" : "transform 0.2s ease, opacity 0.2s ease",
-                          zIndex: snapshot.isDragging ? 1000 : 1,
-                          boxShadow: snapshot.isDragging
-                            ? "0 8px 16px rgba(0, 0, 0, 0.3), 0 0 4px 5.5px #264079"
-                            : "none",
-                          ...provided.draggableProps.style,
-                        }}
+                        className={`${styles.draggableCardWrapper} ${
+                          snapshot.isDragging ? styles.draggableCardWrapperDragging : ""
+                        }`}
+                        style={provided.draggableProps.style}
                       >
                         <Card
                           card={card}

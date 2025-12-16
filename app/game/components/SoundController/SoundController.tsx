@@ -19,7 +19,5 @@ const SoundController = memo(() => {
   );
 });
 
-SoundController.displayName = "SoundController";
-
 export default SoundController;
 
